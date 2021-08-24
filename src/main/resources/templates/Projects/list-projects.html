@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout::header"></head>
+
+	
+	<body>
+	<nav th:replace="layout::headCode"></nav>
+	
+	<div class="container">
+		
+		<h1>Projects Directory</h1>
+		<a th:href="@{/projects/new}" class="btn btn-primary btn-sm mb-3">Add Project</a>
+		<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Project Name</th>
+				<th>Status</th>
+			</tr>
+			
+		</thead>
+		<tbody>
+			<tr th:each="aproject:${projectlist}">
+				<td th:text="${aproject.name}"/>
+				<td th:text="${aproject.status}"/>
+			
+			</tr>
+		</tbody>
+	
+	
+	</table>
+			
+		
+	</div>
+
+</body>
+	    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://cdn.rawgit.com/crlcu/multiselect/v2.5.1/dist/js/multiselect.min.js"></script>
+		
+</html>
